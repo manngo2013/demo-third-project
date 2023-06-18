@@ -9,18 +9,31 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import styles from "./SignUp.module.css";
+
+const stylesBox = {
+  marginTop: 8,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+};
+
+const styleAvatar = {
+  m: 1,
+  bgcolor: "secondary.main",
+};
 
 function SignUp(props) {
   return (
-    <div>
-      <Box>
-        <Avatar>
+    <div className={styles.container}>
+      <Box sx={stylesBox}>
+        <Avatar sx={styleAvatar}>
           <AccountCircleIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign Up
         </Typography>
-        <Box component="form">
+        <Box component="form" sx={{ mt: 3 }}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -53,13 +66,19 @@ function SignUp(props) {
               <TextField
                 required
                 fullWidth
+                type="password"
                 id="password"
                 label="Password"
                 name="password"
               />
             </Grid>
           </Grid>
-          <Button type="submit" fullWidth variant="contained">
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
             Sign Up
           </Button>
           <Grid container justifyContent="flex-end">
